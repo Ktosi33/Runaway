@@ -32,27 +32,6 @@ public class playerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-
-        if (horizontal > 0.9 && currentTrack < 2)
-        {
-            direction = Direction.right;
-            
-            moveToPoint = new MoveToTrack(currentTrack, this.gameObject, move);
-
-            currentTrack++;
-        }
-
-        if (horizontal < -0.9 && currentTrack > 0)
-        {
-            direction = Direction.left;
-           
-            moveToPoint = new MoveToTrack(currentTrack, this.gameObject, move);
-
-            currentTrack--;
-        }
-
-
 
         if (moveToPoint != null)
         {
@@ -73,6 +52,21 @@ public class playerMovement : MonoBehaviour
     }
     private void Update()
     {
+
+        if (Input.GetKeyDown("d") && currentTrack < 2)
+        {
+            direction = Direction.right;
+            currentTrack++;
+            moveToPoint = new MoveToTrack(currentTrack, this.gameObject, move);
+        }
+
+        if (Input.GetKeyDown("a") && currentTrack > 0)
+        {
+            direction = Direction.left;
+            currentTrack--;
+            moveToPoint = new MoveToTrack(currentTrack, this.gameObject, move);
+        }
+
         move.move(speed, 0, 1);
     }
 }
