@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class Tracks : MonoBehaviour
 {
-public GameObject[] tracks;
+    public GameObject[] tracks;
+   
 
-
- public  GameObject this[int index]
+    public float getMidXTrack(int index)
+    {
+        return tracks[index].transform.position.x;
+    }
+  
+    public  GameObject this[int index]
     {
         get
         {
             return  this.tracks[index];
         }
     }
-
+ 
 }
