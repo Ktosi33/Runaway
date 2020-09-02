@@ -10,9 +10,9 @@ public class TrapTools : MonoBehaviour
 {
     private GameObject movingObject;
     private delegate void UpdateAction();
-    UpdateAction updateAction;  
+     
     private delegate void FixedUpdateAction();
-    FixedUpdateAction fixedUpdateAction;
+
     /// <summary> This method is using to set gameObject to work with
     /// <para> You have to send: Gameobject which you want to work with </para>
     /// </summary>
@@ -59,13 +59,6 @@ public class TrapTools : MonoBehaviour
         movingObject.GetComponent<Rigidbody>() ;
 
     }
-    private void FixedUpdate()
-    {
-        fixedUpdateAction();
-    }
-    private void Update()
-    {
-        updateAction();
-    }
+
 
 }

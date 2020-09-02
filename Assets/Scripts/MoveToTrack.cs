@@ -17,8 +17,6 @@ public class MoveToTrack : IMoveToPoint
 
    public bool objectReachedTarget()
     {
-        // Debug.Log(Mathf.Abs(GameObject.FindGameObjectWithTag("Tracks").GetComponent<Tracks>().getMidXTrack(targetTrackIndex) - objectToMove.transform.position.x));
-        Debug.Log(targetTrackIndex);
         if(Mathf.Abs(GameObject.FindGameObjectWithTag("Tracks").GetComponent<Tracks>().getMidXTrack(targetTrackIndex) - objectToMove.transform.position.x) < 0.2)
         {
             Debug.Log("true");
